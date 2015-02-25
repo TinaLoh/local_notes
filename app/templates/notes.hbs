@@ -1,0 +1,20 @@
+<h1>Notes App</h1>
+
+{{message}}
+
+<h3>Add a new note:</h3>
+
+<center>{{input value=newTitle placeholder="title" cols="80" rows ="6"}}</center>
+<br>
+<center>{{textarea value=newBody placeholder="body" cols="80" rows="6"}}</center>
+<center><button {{action "createNote"}}>Submit New Note</button></center>
+
+  <ul>
+  {{#each note in model}}
+  <li>TITLE: {{note.title}}
+    <button {{action "deleteNote" note}}>Delete Note</button></li>
+  <li>BODY: {{note.body}}</li>
+  {{/each}}
+  </ul>
+
+{{outlet}}
